@@ -1,0 +1,77 @@
+/* The handset: black, chunky, with the hard shadow every sticker gets. */
+.phone {
+  position: relative;
+  height: 100%;
+  max-height: 44rem;
+  aspect-ratio: 9 / 18.5;
+  padding: 0.7rem;
+  border-radius: 2.6rem;
+  background: var(--black);
+  box-shadow:
+    0 0 0 3px var(--black),
+    12px 14px 0 rgb(0 0 0 / 0.85);
+  transform: rotate(-2deg);
+  justify-self: center;
+}
+.notch {
+  position: absolute;
+  z-index: 3;
+  top: 1.15rem;
+  left: 50%;
+  translate: -50% 0;
+  width: 30%;
+  height: 1.3rem;
+  border-radius: 1rem;
+  background: var(--black);
+}
+.home {
+  position: absolute;
+  z-index: 3;
+  bottom: 1.1rem;
+  left: 50%;
+  translate: -50% 0;
+  width: 34%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgb(0 0 0 / 0.35);
+}
+.screen {
+  position: relative;
+  height: 100%;
+  border-radius: 2rem;
+  overflow: hidden;
+  background: var(--cream);
+  container-type: inline-size;
+}
+/* Screens slide like app navigation: in from the right, out to the left. */
+.view {
+  position: absolute;
+  inset: 0;
+  padding: 2.6rem 7cqi 2rem;
+  display: grid;
+  align-content: start;
+  gap: 4cqi;
+  opacity: 0;
+  transform: translateX(30%);
+  transition:
+    opacity 380ms var(--ease-out),
+    transform 520ms var(--ease-out);
+}
+.past {
+  transform: translateX(-30%);
+}
+.on {
+  opacity: 1;
+  transform: none;
+}
+
+@media (min-width: 64rem) {
+  .phone {
+    height: min(80svh, 44rem);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .view {
+    transform: none;
+  }
+}

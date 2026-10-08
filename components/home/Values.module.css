@@ -1,0 +1,72 @@
+.cards {
+  display: grid;
+  gap: var(--s-7) var(--s-6);
+  padding: 0;
+  margin: 0;
+}
+.card {
+  display: grid;
+}
+/* A recipe card: a coloured header band and ruled lines below it. */
+.inner {
+  position: relative;
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+  padding: var(--s-5) var(--s-5) var(--s-7);
+  border: 2.5px solid var(--black);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(var(--card), var(--card)) top / 100% 3.25rem no-repeat,
+    repeating-linear-gradient(#fff 0 1.85rem, #cfe0f2 1.85rem calc(1.85rem + 1.5px)) 0 3.25rem / 100% auto;
+  background-color: #fff;
+  box-shadow: var(--pop-lg);
+  transform: rotate(var(--tilt));
+  transition:
+    transform var(--t-base) var(--ease-boing),
+    box-shadow var(--t-base) ease;
+}
+.inner:hover {
+  transform: rotate(0deg) translate(-3px, -4px);
+  box-shadow: 11px 11px 0 var(--black);
+}
+.no {
+  font: var(--type-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  min-height: 1.6rem;
+}
+.statement {
+  font: var(--type-h3);
+  letter-spacing: var(--track-h3);
+}
+.body {
+  color: var(--stone);
+  line-height: 1.85rem;
+}
+.pip {
+  position: absolute;
+  right: 1rem;
+  bottom: -1.75rem;
+  transform: rotate(8deg);
+}
+.inner:hover .pip {
+  animation: wiggle 500ms ease-in-out;
+}
+
+@media (min-width: 48rem) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .card:nth-child(even) {
+    margin-top: var(--s-8);
+  }
+}
+@media (min-width: 80rem) {
+  .cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .card:nth-child(even) {
+    margin-top: var(--s-7);
+  }
+}

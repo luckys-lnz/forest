@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Forest design tokens
+   Black is the brand. Rice is where you read. Yolk is for doing things.
+   Shiso is for the community and for Pip.
+   In the couple interaction, "you" are yolk and "them" are shiso.
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --black: #000000;
+  --coal: #1e1c19; /* raised surface on black */
+  --ash: #2e2b27; /* hairlines on black */
+  --rice: #eeeae2; /* primary light surface + text on black */
+  --paper: #f7f5f0; /* lightest surface */
+  --clay: #d9d3c8; /* hairlines and wells on rice */
+  --stone: #6b655c; /* muted text on rice (5.1:1) */
+  --mist: #a39c90; /* muted text on black (7.6:1) */
+  --yolk: #e7b53c;
+  --yolk-deep: #c99a22;
+  --shiso: #8db07a;
+  --shiso-deep: #3f6a35; /* shiso text on rice (5.6:1) */
+  --chili: #b8402c; /* errors only */
+  --chili-soft: #f3d9d2;
+
+  /* Roles (dark by default; .on-light flips them) */
+  --bg: var(--black);
+  --fg: var(--rice);
+  --muted: var(--mist);
+  --line: var(--ash);
+  --surface: var(--coal);
+  --accent-text: var(--yolk);
+  --error: #ff9a85;
+  --a: var(--yolk); /* partner A */
+  --b: var(--shiso); /* partner B */
+
+  /* Type */
+  --serif: var(--font-serif), "Iowan Old Style", Georgia, serif;
+  --sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --step--2: 0.75rem;
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.375rem, 1.2rem + 0.75vw, 1.75rem);
+  --step-3: clamp(1.75rem, 1.35rem + 1.6vw, 2.625rem);
+  --step-4: clamp(2.25rem, 1.5rem + 3.2vw, 4rem);
+  --step-5: clamp(2.75rem, 1.4rem + 5.6vw, 6.25rem);
+  --step-6: clamp(3.25rem, 1.2rem + 8.4vw, 9rem);
+
+  /* Space */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: clamp(3rem, 2rem + 4vw, 5rem);
+  --s-9: clamp(4.5rem, 3rem + 6vw, 8rem);
+  --s-10: clamp(6rem, 4rem + 9vw, 12rem);
+
+  /* Layout */
+  --page: clamp(1rem, 0.5rem + 3vw, 3rem); /* side gutter */
+  --max: 90rem;
+  --measure: 38rem;
+  --header-h: 4rem;
+
+  /* Shape: radius by role, not one radius for everything */
+  --r-pill: 999px;
+  --r-image: 3px;
+  --r-sheet: 1.25rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.45, 0.5, 1);
+  --t-fast: 160ms;
+  --t-base: 320ms;
+  --t-slow: 640ms;
+}

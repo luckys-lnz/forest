@@ -1,0 +1,94 @@
+.maker {
+  display: grid;
+  gap: var(--s-7);
+}
+
+/* Mobile: both sides first, then Pip and the result. */
+.table {
+  display: grid;
+  gap: var(--s-6);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "a"
+    "b"
+    "center";
+}
+.table > :first-child {
+  grid-area: a;
+}
+.table > :last-child {
+  grid-area: b;
+}
+.center {
+  grid-area: center;
+  display: grid;
+  gap: var(--s-4);
+  justify-items: center;
+  align-content: start;
+}
+
+.pipRow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  width: 100%;
+  max-width: 26rem;
+}
+.full .pipRow {
+  max-width: 36rem;
+}
+.pipWrap {
+  flex: none;
+}
+.line {
+  font: var(--type-voice);
+  letter-spacing: var(--track-voice);
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+}
+
+.notice {
+  font-size: var(--step--1);
+  color: var(--muted);
+  max-width: 44rem;
+}
+
+/* Desktop: a real table, two sides facing each other. */
+@media (min-width: 64rem) {
+  .table {
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 26rem) minmax(0, 1fr);
+    grid-template-areas: "a center b";
+    align-items: start;
+  }
+  .full .table {
+    grid-template-columns: minmax(0, 1fr) minmax(24rem, 34rem) minmax(0, 1fr);
+  }
+  .table > :first-child,
+  .table > :last-child {
+    padding-top: 7.5rem;
+  }
+  .pipRow {
+    flex-direction: column;
+    text-align: center;
+  }
+  .line {
+    justify-content: center;
+    min-height: 2.8em;
+  }
+}
+
+/* The full tool's detailed tiles need room: tablets and small laptops get
+   the two sides next to each other with the result underneath. */
+@media (min-width: 48rem) and (max-width: 79.99rem) {
+  .full .table {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "a b"
+      "center center";
+  }
+  .full .table > :first-child,
+  .full .table > :last-child {
+    padding-top: 0;
+  }
+}

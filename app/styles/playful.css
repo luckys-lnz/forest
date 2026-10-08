@@ -1,0 +1,64 @@
+/* ==========================================================================
+   The Sunday-table layer: sticker colours, display type and kitchen textures.
+   Black stays the ink. These colours are for stickers, never for body text.
+   ========================================================================== */
+
+:root {
+  /* "Display" is the strong UI voice of the sans; headlines use type roles. */
+  --display: var(--sans);
+  --hand: var(--serif);
+
+  /* Sticker sheet */
+  --tomato: #ff5b3a;
+  --butter: #ffd84a;
+  --sky: #9cc9ff;
+  --bubble: #ff9fc6;
+  --mint: #8fdcb0;
+  --cream: #fbf3e2;
+  --crust: #f1e2c3;
+
+  --sticker-edge: 0 0 0 5px #fff;
+  --sticker-shadow: 0 10px 0 -2px rgb(0 0 0 / 0.9);
+  --pop: 4px 4px 0 var(--black);
+  --pop-lg: 7px 7px 0 var(--black);
+  --r-card: 1.75rem;
+  --ease-boing: cubic-bezier(0.3, 1.8, 0.5, 0.8);
+}
+
+/* A warm cream surface, the colour of an old menu card. */
+.on-cream {
+  --bg: var(--cream);
+  --fg: var(--black);
+  --muted: var(--stone);
+  --line: var(--black);
+  --surface: #fff;
+  --accent-text: var(--shiso-deep);
+  --error: #a63520;
+  --b: var(--shiso-deep);
+}
+
+/* Legacy hook for headlines. Zero specificity, so a module's type
+   role always wins; the accent rule for <em> lives in type.css. */
+:where(.headline) {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  text-wrap: balance;
+}
+.accent {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+}
+/* Margin notes: the personality serif, in italic. */
+.hand {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.on-cream :focus-visible {
+  outline-color: var(--black);
+}

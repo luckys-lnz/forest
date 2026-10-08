@@ -1,0 +1,80 @@
+.card {
+  transform: rotate(calc((1 - var(--t)) * 4deg));
+}
+.photo {
+  aspect-ratio: 4 / 3;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2cqi;
+  margin-top: 1cqi;
+}
+.stats div {
+  display: grid;
+  padding: 2cqi 3cqi;
+  border-radius: 3cqi;
+  background: var(--cream);
+}
+.stats dt {
+  order: 2;
+  font-size: 3cqi;
+  color: var(--stone);
+}
+.stats dd {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 6.4cqi;
+  letter-spacing: -0.03em;
+}
+.button {
+  justify-self: stretch;
+  text-align: center;
+  padding: 3.4cqi;
+  border-radius: 99px;
+  border: 0.6cqi solid var(--black);
+  background: var(--black);
+  color: var(--rice);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 4.4cqi;
+  box-shadow: 1.2cqi 1.2cqi 0 var(--tomato);
+  transition:
+    transform 260ms var(--ease-boing),
+    background 200ms ease,
+    color 200ms ease;
+}
+.button[data-on="true"] {
+  background: var(--butter);
+  color: var(--black);
+  transform: translate(0.8cqi, 0.8cqi);
+  box-shadow: 0.4cqi 0.4cqi 0 var(--tomato);
+}
+/* A little burst of stickers when the plan is made. */
+.confetti {
+  position: absolute;
+  inset: auto 0 18% 0;
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none;
+}
+.confetti :global(svg) {
+  width: 12cqi;
+  height: auto;
+  opacity: 0;
+  transform: translateY(10cqi) scale(0.4);
+  transition:
+    transform 500ms var(--ease-boing),
+    opacity 200ms ease;
+}
+.confetti :global(svg):nth-child(2) {
+  transition-delay: 80ms;
+}
+.confetti :global(svg):nth-child(3) {
+  transition-delay: 160ms;
+}
+.confetti[data-on="true"] :global(svg) {
+  opacity: 1;
+  transform: translateY(-30cqi) rotate(var(--tilt));
+}

@@ -1,0 +1,15 @@
+.track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 3px;
+  pointer-events: none;
+}
+.bar {
+  height: 100%;
+  background: var(--yolk);
+  transform: scaleX(0);
+  transform-origin: left;
+}

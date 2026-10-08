@@ -1,0 +1,87 @@
+.stage {
+  width: 100%;
+  max-width: 26rem;
+  min-height: 16rem;
+  display: grid;
+  place-items: center;
+}
+.feature {
+  max-width: 36rem;
+  min-height: 24rem;
+}
+
+.deal {
+  width: 100%;
+  animation: deal 620ms var(--ease-spring) both;
+  transform-origin: 50% 0%;
+}
+@keyframes deal {
+  from {
+    opacity: 0;
+    transform: translateY(-24px) rotate(-2.5deg) scale(0.94);
+    filter: blur(4px);
+  }
+}
+
+/* Before both moods are in: two plates waiting to be filled. */
+.plates {
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plate {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  border: 1.5px dashed var(--ash);
+  transition:
+    border-color var(--t-base) ease,
+    background-color var(--t-base) ease,
+    transform var(--t-slow) var(--ease-spring);
+}
+.plate + .plate {
+  margin-left: -1.75rem;
+}
+.plateA {
+  border-style: solid;
+  border-color: var(--yolk);
+  background: color-mix(in srgb, var(--yolk) 10%, transparent);
+  transform: translateX(-6px);
+}
+.plateB {
+  border-style: solid;
+  border-color: var(--shiso);
+  background: color-mix(in srgb, var(--shiso) 10%, transparent);
+  transform: translateX(6px);
+}
+.plateA + .plateB {
+  transform: translateX(-10px);
+}
+
+/* Pip thinking: three seeds, the two partners and the crowd. */
+.thinking {
+  display: flex;
+  gap: 10px;
+}
+.thinking span {
+  width: 10px;
+  height: 13px;
+  border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%;
+  background: var(--rice);
+  animation: pulse 900ms var(--ease-inout) infinite;
+}
+.thinking span:nth-child(2) {
+  animation-delay: 120ms;
+  background: var(--yolk);
+}
+.thinking span:nth-child(3) {
+  animation-delay: 240ms;
+  background: var(--shiso);
+}
+@keyframes pulse {
+  50% {
+    transform: translateY(-8px);
+    opacity: 0.5;
+  }
+}

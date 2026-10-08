@@ -1,0 +1,52 @@
+.nav ul {
+  display: flex;
+  gap: var(--s-2);
+}
+/* Each link is a little sticker that lifts and tilts when you reach for it. */
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0 var(--s-4);
+  border-radius: var(--r-pill);
+  border: 2px solid transparent;
+  text-decoration: none;
+  font: 500 var(--step--1) / 1 var(--sans);
+  letter-spacing: 0.02em;
+  color: var(--rice);
+  transition:
+    transform var(--t-base) var(--ease-boing),
+    background var(--t-fast) ease,
+    color var(--t-fast) ease;
+}
+.nav li:nth-child(1) .link {
+  --hover: var(--butter);
+  --tilt: -4deg;
+}
+.nav li:nth-child(2) .link {
+  --hover: var(--bubble);
+  --tilt: 3deg;
+}
+.nav li:nth-child(3) .link {
+  --hover: var(--sky);
+  --tilt: -3deg;
+}
+.nav li:nth-child(4) .link {
+  --hover: var(--mint);
+  --tilt: 4deg;
+}
+.link:hover {
+  background: var(--hover);
+  color: var(--black);
+  border-color: var(--black);
+  transform: rotate(var(--tilt)) scale(1.06);
+}
+.link[aria-current="page"] {
+  background: var(--rice);
+  color: var(--black);
+}
+@media (max-width: 47.99rem) {
+  .nav {
+    display: none;
+  }
+}

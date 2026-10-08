@@ -1,0 +1,25 @@
+.jobs {
+  display: grid;
+  gap: var(--s-4);
+  max-width: 32rem;
+}
+.jobs div {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--line);
+}
+.jobs dt {
+  font-weight: 600;
+}
+.jobs dd {
+  margin: 0;
+  color: var(--muted);
+}
+@media (max-width: 30rem) {
+  .jobs div {
+    grid-template-columns: 1fr;
+    gap: var(--s-1);
+  }
+}

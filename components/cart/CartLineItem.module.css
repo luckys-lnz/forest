@@ -1,0 +1,79 @@
+.line {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr auto;
+  grid-template-areas:
+    "thumb info total"
+    "thumb controls controls";
+  gap: var(--s-3) var(--s-4);
+  padding: var(--s-5) 0;
+  border-top: 1px solid var(--line);
+  animation: lineIn var(--t-base) var(--ease-out);
+}
+.line:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.out .thumb,
+.out .info {
+  opacity: 0.55;
+}
+.thumb {
+  grid-area: thumb;
+  aspect-ratio: 4 / 5;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.info {
+  grid-area: info;
+  display: grid;
+  gap: 2px;
+  align-content: start;
+}
+.name {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+}
+.name a {
+  text-decoration: none;
+}
+.sub {
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.warn {
+  font-size: var(--step--1);
+  color: var(--error);
+  font-weight: 600;
+}
+.controls {
+  grid-area: controls;
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+.remove {
+  min-height: 2.5rem;
+  font-size: var(--step--1);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  color: var(--muted);
+}
+.remove:hover {
+  color: var(--fg);
+}
+.total {
+  grid-area: total;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+@keyframes lineIn {
+  from {
+    opacity: 0;
+  }
+}
+@media (min-width: 64rem) {
+  .line {
+    grid-template-columns: 7rem 1fr auto auto;
+    grid-template-areas: "thumb info controls total";
+    align-items: start;
+  }
+}

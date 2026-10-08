@@ -1,0 +1,55 @@
+.bars {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 4cqi;
+  margin-top: 2cqi;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "name value"
+    "track track";
+  gap: 1.4cqi 2cqi;
+  align-items: baseline;
+}
+.name {
+  grid-area: name;
+  font-weight: 700;
+  font-size: 3.8cqi;
+}
+.value {
+  grid-area: value;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 4.6cqi;
+  font-variant-numeric: tabular-nums;
+}
+.track {
+  grid-area: track;
+  height: 5cqi;
+  border-radius: 99px;
+  border: 0.5cqi solid var(--black);
+  background: #fff;
+  overflow: hidden;
+}
+.fill {
+  display: block;
+  height: 100%;
+  width: calc(var(--w) * 100%);
+  background: var(--fill, var(--butter));
+  border-right: 0.5cqi solid var(--black);
+}
+.row:nth-child(2) .fill {
+  --fill: var(--tomato);
+}
+.row:nth-child(3) .fill {
+  --fill: var(--sky);
+}
+.row:nth-child(4) .fill {
+  --fill: var(--mint);
+}
+.row:nth-child(5) .fill {
+  --fill: var(--bubble);
+}

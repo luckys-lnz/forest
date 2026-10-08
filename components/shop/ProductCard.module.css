@@ -1,0 +1,93 @@
+.card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--s-4);
+}
+.media {
+  display: block;
+  aspect-ratio: 4 / 5;
+  border-radius: 1.25rem;
+  border: 2.5px solid var(--fg);
+  box-shadow: 5px 5px 0 var(--fg);
+  overflow: hidden;
+  transition:
+    transform var(--t-base) var(--ease-boing),
+    box-shadow var(--t-base) ease;
+}
+.card:hover .media {
+  transform: translate(-2px, -3px) rotate(-1.5deg);
+  box-shadow: 8px 9px 0 var(--fg);
+}
+.soldOut .media {
+  filter: grayscale(0.7);
+  opacity: 0.75;
+}
+.info {
+  display: grid;
+  gap: var(--s-2);
+  align-content: start;
+}
+.category {
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.name {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+}
+.name a {
+  text-decoration: none;
+}
+.name a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+.tagline {
+  font-size: var(--step--1);
+  color: var(--muted);
+  max-width: 30rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-2) var(--s-4);
+  margin-top: var(--s-1);
+}
+.price {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.from {
+  font-weight: 400;
+  color: var(--muted);
+}
+.cta {
+  margin-top: var(--s-2);
+}
+
+.lg .name {
+  font: var(--type-name-lg);
+  letter-spacing: var(--track-name-lg);
+}
+
+/* Phones show cards two-up: keep them compact and scannable. */
+@media (max-width: 47.99rem) {
+  .card {
+    gap: var(--s-3);
+  }
+  .md .tagline {
+    display: none;
+  }
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s-1);
+  }
+  .cta > * {
+    width: 100%;
+    padding-inline: var(--s-3);
+  }
+}

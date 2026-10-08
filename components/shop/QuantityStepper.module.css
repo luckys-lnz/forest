@@ -1,0 +1,34 @@
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-pill);
+  height: 3.25rem;
+}
+.sm {
+  height: 2.5rem;
+}
+.stepper button {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 100%;
+  border-radius: var(--r-pill);
+  transition: background-color var(--t-fast) ease;
+}
+.sm button {
+  width: 2.5rem;
+}
+.stepper button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--fg) 8%, transparent);
+}
+.stepper button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.value {
+  min-width: 2ch;
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}

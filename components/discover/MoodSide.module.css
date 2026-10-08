@@ -1,0 +1,46 @@
+/* Each side carries its partner colour in --c for its chips. */
+.side {
+  --c: var(--a);
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+}
+.b {
+  --c: var(--b);
+}
+.head {
+  display: flex;
+  align-items: baseline;
+}
+.a .head {
+  justify-content: flex-end;
+}
+.label,
+.nameInput {
+  font: var(--type-h3);
+  letter-spacing: var(--track-h3);
+  color: var(--c);
+}
+.nameInput {
+  width: 9ch;
+  background: transparent;
+  border: 0;
+  border-bottom: 1.5px dashed color-mix(in srgb, var(--c) 45%, transparent);
+  padding: 0 0 0.15em;
+}
+.a .nameInput {
+  text-align: right;
+}
+.nameInput:focus-visible {
+  outline: none;
+  border-bottom-style: solid;
+  border-bottom-color: var(--c);
+}
+@media (max-width: 47.99rem) {
+  .a .head {
+    justify-content: flex-start;
+  }
+  .a .nameInput {
+    text-align: left;
+  }
+}

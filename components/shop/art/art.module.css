@@ -1,0 +1,63 @@
+.art {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.object {
+  transition: transform var(--t-slow) var(--ease-out);
+}
+.shadow {
+  fill: #000;
+  opacity: 0.28;
+  transform-origin: 200px 390px;
+  transition:
+    transform var(--t-slow) var(--ease-out),
+    opacity var(--t-slow) var(--ease-out);
+}
+:global(.art-lift):hover .object,
+:global(.art-lift):focus-within .object {
+  transform: translateY(-10px);
+}
+:global(.art-lift):hover .shadow,
+:global(.art-lift):focus-within .shadow {
+  transform: scale(0.86);
+  opacity: 0.18;
+}
+
+.boxWord {
+  font-family: var(--serif);
+  font-size: 34px;
+  letter-spacing: -1px;
+}
+.boxLabel {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+}
+.jarWord {
+  font-family: var(--serif);
+  font-size: 26px;
+  fill: #000;
+}
+.jarLabel {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  fill: #000;
+}
+.deckWord {
+  font-family: var(--serif);
+  font-size: 22px;
+  fill: #eeeae2;
+}
+.cardWord {
+  font-family: var(--serif);
+  font-size: 34px;
+  fill: #eeeae2;
+}
+.cardLabel {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  fill: #a39c90;
+}

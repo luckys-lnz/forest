@@ -1,0 +1,48 @@
+.body {
+  max-width: 40rem;
+  font: 400 1.125rem / 1.7 var(--sans);
+}
+.body > * + * {
+  margin-top: 1.25em;
+}
+.body > p:first-child::first-letter {
+  float: left;
+  font: 400 4.6em / 0.8 var(--serif);
+  padding: 0.04em 0.1em 0 0;
+}
+.body h2 {
+  font: var(--type-h3);
+  letter-spacing: var(--track-h3);
+  margin-top: 2em;
+}
+.body ul {
+  padding-left: 1.2em;
+}
+.body li + li {
+  margin-top: 0.4em;
+}
+.body li::marker {
+  color: var(--shiso-deep);
+}
+.pull {
+  margin: 2em 0;
+  padding: var(--s-5) 0;
+  border-top: 3px solid var(--black);
+  border-bottom: 1px solid var(--clay);
+}
+.pull p {
+  font: var(--type-h3);
+  font-style: italic;
+  letter-spacing: var(--track-h3);
+}
+.figure figcaption {
+  margin-top: var(--s-2);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+@media (min-width: 64rem) {
+  .pull {
+    margin-left: -4rem;
+  }
+}

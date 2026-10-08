@@ -1,0 +1,33 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--shiso);
+}
+.low {
+  color: var(--fg);
+  font-weight: 600;
+}
+.low .dot {
+  background: var(--yolk);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+.sold-out .dot {
+  background: transparent;
+  border: 1.5px solid var(--muted);
+}
+.digital .dot {
+  background: var(--muted);
+}
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--yolk) 25%, transparent);
+  }
+}

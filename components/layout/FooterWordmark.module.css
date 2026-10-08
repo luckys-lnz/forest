@@ -1,0 +1,65 @@
+/* No clipping here: Pip's leaf pokes up into the footer above the word.
+   The footer itself clips, so nothing can widen or lengthen the page. */
+.mark {
+  position: relative;
+  margin-top: var(--s-8);
+  padding-top: 12vw;
+  text-align: center;
+  line-height: 0.78;
+}
+.word {
+  position: relative;
+  z-index: 2;
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 28vw;
+  letter-spacing: -0.045em;
+  color: var(--rice);
+  /* Bottom of the letters sits on the page edge, like a table top. */
+  margin-bottom: -0.11em;
+}
+/* Pip waits behind the "t" and pops up when the footer comes into view. */
+.pip {
+  position: absolute;
+  z-index: 1;
+  right: 9%;
+  bottom: 30%;
+  width: 14vw;
+  transform: translateY(70%) rotate(10deg);
+  transition: transform 700ms var(--ease-boing) 200ms;
+}
+.pip svg {
+  width: 100%;
+  height: auto;
+}
+.seen .pip {
+  transform: translateY(-38%) rotate(10deg);
+}
+.bye {
+  position: absolute;
+  z-index: 3;
+  right: 22%;
+  top: 4vw;
+  font-size: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+  color: var(--butter);
+  transform: rotate(-6deg) scale(0.6);
+  opacity: 0;
+  transition:
+    opacity 400ms ease 700ms,
+    transform 500ms var(--ease-boing) 700ms;
+}
+.seen .bye {
+  opacity: 1;
+  transform: rotate(-6deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pip,
+  .seen .pip {
+    transform: translateY(-38%) rotate(10deg);
+  }
+  .bye {
+    opacity: 1;
+    transform: rotate(-6deg);
+  }
+}

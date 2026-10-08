@@ -1,0 +1,9 @@
+/* Opacity only: a transform here would trap position:fixed children. */
+.page {
+  animation: settle 480ms var(--ease-out);
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+  }
+}

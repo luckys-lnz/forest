@@ -1,0 +1,57 @@
+/* A tall scroll track; everything inside the sticky frame stays put. */
+.story {
+  position: relative;
+  height: 460vh;
+  background: var(--black);
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--act-bg);
+  color: var(--black);
+  transition: background-color 700ms var(--ease-inout);
+  --fg: var(--black);
+  --muted: rgb(0 0 0 / 0.68);
+}
+/* A soft gingham cloth over the colour, for the kitchen-table feel. */
+.sticky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  --g: rgb(255 255 255 / 0.18);
+  background-image:
+    linear-gradient(90deg, var(--g) 50%, transparent 50%),
+    linear-gradient(var(--g) 50%, transparent 50%);
+  background-size: 44px 44px;
+}
+
+/* Phones: words on top, the phone below, the rail as dots. */
+.grid {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  justify-items: center;
+  gap: var(--s-4);
+  padding-top: calc(var(--header-h) + var(--s-4));
+  padding-bottom: var(--s-4);
+}
+
+/* Desktop: number and words | phone | the step rail. */
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 0.8fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: stretch;
+    gap: var(--s-8);
+    padding-top: var(--header-h);
+    padding-bottom: 0;
+  }
+}

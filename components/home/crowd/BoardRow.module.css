@@ -1,0 +1,75 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "dish figure"
+    "reason reason"
+    "try try";
+  gap: var(--s-2) var(--s-4);
+  padding: var(--s-5) 0;
+  border-top: 1px solid var(--line);
+}
+:global(.js) :global(.board):not(:global(.board-in)) .row {
+  opacity: 0;
+}
+:global(.board-in) .row {
+  animation: rowIn var(--t-slow) var(--ease-out) both;
+  animation-delay: calc(var(--i) * 80ms);
+}
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+.dish {
+  grid-area: dish;
+}
+.name {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+}
+.cuisine,
+.label {
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.figure {
+  grid-area: figure;
+  display: grid;
+  justify-items: end;
+  align-content: start;
+  gap: 2px;
+  text-align: right;
+}
+.big {
+  font: var(--type-number);
+  letter-spacing: var(--track-h3);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.label {
+  font-size: var(--step--2);
+  max-width: 9rem;
+}
+.reason {
+  grid-area: reason;
+  max-width: 38rem;
+  font-size: var(--step--1);
+}
+.try {
+  grid-area: try;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  font-weight: 600;
+  font-size: var(--step--1);
+  text-underline-offset: 0.3em;
+}
+@media (min-width: 64rem) {
+  .row {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 4fr) minmax(0, 2fr) auto;
+    grid-template-areas: "dish reason figure try";
+    align-items: start;
+  }
+}

@@ -1,0 +1,78 @@
+.menu {
+  display: grid;
+  gap: var(--s-6);
+}
+.side {
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+}
+/* The big "pick for us" lever. */
+.lucky {
+  min-height: 3.5rem;
+  padding: 0 var(--s-5);
+  border-radius: 99px;
+  border: 2.5px solid var(--black);
+  background: var(--black);
+  color: var(--rice);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--step-1);
+  box-shadow: 5px 5px 0 var(--tomato);
+  transition:
+    transform var(--t-base) var(--ease-boing),
+    box-shadow 150ms ease;
+}
+.lucky:hover {
+  transform: rotate(-1.5deg) translateY(-2px);
+}
+.lucky:active,
+.lucky[aria-disabled="true"] {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--tomato);
+}
+.status {
+  font-size: var(--step--1);
+  color: var(--muted);
+  min-height: 2.8em;
+}
+/* The board itself: a chalkboard-dark panel the menu cards sit on. */
+.boardWrap {
+  display: grid;
+  gap: var(--s-3);
+}
+.board {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-5) var(--s-3);
+  padding: var(--s-6) var(--s-3) var(--s-5);
+  border-radius: var(--r-card);
+  background: var(--mood);
+  border: 3px solid var(--black);
+  transition: background-color 500ms var(--ease-inout);
+}
+.note {
+  font-size: var(--step--2);
+  color: var(--muted);
+}
+
+@media (min-width: 48rem) {
+  .board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: var(--s-7) var(--s-5) var(--s-6);
+    gap: var(--s-6) var(--s-5);
+  }
+}
+@media (min-width: 64rem) {
+  .menu {
+    grid-template-columns: minmax(16rem, 20rem) minmax(0, 1fr);
+    gap: var(--s-7);
+    align-items: start;
+  }
+  .side {
+    position: sticky;
+    top: calc(var(--header-h) + var(--s-5));
+  }
+}

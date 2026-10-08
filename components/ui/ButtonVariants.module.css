@@ -1,0 +1,46 @@
+/* Visual variants. Each answers "how important is this action here?" */
+/* Primary and inverse buttons are chunky stickers with a hard shadow. */
+.primary {
+  background: var(--yolk);
+  color: var(--black);
+  border: 2px solid var(--black);
+  box-shadow: 3px 3px 0 var(--fg);
+}
+.primary:hover:not(:disabled) {
+  background: var(--butter);
+  transform: translate(-1px, -2px) rotate(-1deg);
+  box-shadow: 5px 5px 0 var(--fg);
+}
+
+.secondary {
+  border-color: currentColor;
+  color: var(--fg);
+}
+.secondary:hover:not(:disabled) {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.inverse {
+  background: var(--black);
+  color: var(--rice);
+  box-shadow: 3px 3px 0 var(--tomato);
+}
+.inverse:hover:not(:disabled) {
+  transform: translate(-1px, -2px) rotate(-1deg);
+  box-shadow: 5px 5px 0 var(--tomato);
+}
+
+.quiet {
+  min-height: 2.75rem;
+  padding: 0;
+  border-radius: 0;
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+.quiet:hover {
+  text-decoration-thickness: 2px;
+}

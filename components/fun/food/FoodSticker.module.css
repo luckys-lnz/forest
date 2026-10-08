@@ -1,0 +1,18 @@
+.food {
+  overflow: visible;
+  flex: none;
+  transform: rotate(var(--tilt));
+  filter: drop-shadow(4px 5px 0 rgb(0 0 0 / 0.9));
+}
+.edge {
+  stroke: #fff;
+  stroke-width: 16;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.ink {
+  stroke: #000;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}

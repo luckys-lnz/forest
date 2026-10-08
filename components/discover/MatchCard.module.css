@@ -1,0 +1,88 @@
+.card {
+  display: grid;
+  background: var(--rice);
+  color: var(--black);
+  border-radius: var(--r-sheet);
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.06) inset,
+    0 30px 60px -30px rgb(0 0 0 / 0.8);
+  --fg: var(--black);
+  --muted: var(--stone);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+.compact .media {
+  aspect-ratio: 16 / 9;
+}
+.media > span {
+  border-radius: 0;
+}
+.verdict {
+  position: absolute;
+  left: var(--s-4);
+  bottom: var(--s-4);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--r-pill);
+  background: var(--black);
+  color: var(--rice);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.body {
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-5);
+}
+.compact .body {
+  padding: var(--s-4) var(--s-5) var(--s-5);
+  gap: var(--s-2);
+}
+.kicker {
+  font-size: var(--step--1);
+  color: var(--stone);
+}
+.name {
+  font: var(--type-name-lg);
+  letter-spacing: var(--track-name-lg);
+}
+.compact .name {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+}
+.blurb {
+  color: #2b2925;
+  max-width: 34rem;
+}
+
+.crowd {
+  font-size: var(--step--1);
+  color: #2b2925;
+}
+.crowd strong {
+  font-weight: 700;
+}
+
+.note {
+  font: var(--type-voice);
+  letter-spacing: var(--track-voice);
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--clay);
+}
+
+.product {
+  justify-self: start;
+  font-weight: 600;
+  font-size: var(--step--1);
+  text-underline-offset: 0.3em;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+}

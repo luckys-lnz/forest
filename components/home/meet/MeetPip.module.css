@@ -1,0 +1,21 @@
+.area {
+  display: grid;
+  gap: var(--s-8);
+  align-items: center;
+}
+.title {
+  font: var(--type-h1);
+  letter-spacing: var(--track-h1);
+  margin-bottom: var(--s-5);
+}
+.lead {
+  font: var(--type-lead);
+  max-width: 32rem;
+  margin-bottom: var(--s-6);
+}
+@media (min-width: 64rem) {
+  .area {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--s-9);
+  }
+}

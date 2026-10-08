@@ -1,0 +1,35 @@
+.question {
+  display: grid;
+  gap: 2cqi;
+}
+.q {
+  font-weight: 700;
+  font-size: 4.2cqi;
+}
+.answers {
+  display: flex;
+  gap: 2cqi;
+}
+/* A rubber stamp that thumps down once both of you have answered. */
+.stamp {
+  justify-self: center;
+  margin-top: 2cqi;
+  padding: 2cqi 4cqi;
+  border: 0.8cqi solid var(--tomato);
+  border-radius: 2cqi;
+  color: var(--tomato);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 4.4cqi;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transform: rotate(-8deg) scale(1.8);
+  opacity: 0;
+  transition:
+    transform 340ms var(--ease-boing),
+    opacity 160ms ease;
+}
+.stamp[data-on="true"] {
+  transform: rotate(-8deg);
+  opacity: 1;
+}

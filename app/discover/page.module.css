@@ -1,0 +1,19 @@
+.page {
+  padding: var(--s-7) 0 var(--s-9);
+  min-height: 80vh;
+}
+.head {
+  display: grid;
+  gap: var(--s-4);
+  margin-bottom: var(--s-8);
+  max-width: 48rem;
+}
+.title {
+  font: var(--type-h1);
+  letter-spacing: var(--track-h1);
+}
+.lead {
+  font: var(--type-lead);
+  color: var(--muted);
+  max-width: 36rem;
+}

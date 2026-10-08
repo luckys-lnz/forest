@@ -1,0 +1,41 @@
+.cart {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  min-height: 2.75rem;
+  padding: 0 var(--s-3);
+  border-radius: var(--r-pill);
+  text-decoration: none;
+  font-weight: 600;
+}
+.cart:hover {
+  background: var(--coal);
+}
+.count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.35rem;
+  border-radius: var(--r-pill);
+  background: var(--ash);
+  color: var(--mist);
+  font-size: var(--step--2);
+  font-variant-numeric: tabular-nums;
+  transition:
+    background var(--t-base) ease,
+    color var(--t-base) ease;
+}
+.on {
+  background: var(--yolk);
+  color: var(--black);
+}
+/* Added by CartFeedback when a seed lands. */
+:global(.cart-bump) .count {
+  animation: bump 480ms var(--ease-spring);
+}
+@keyframes bump {
+  40% {
+    transform: scale(1.45);
+  }
+}

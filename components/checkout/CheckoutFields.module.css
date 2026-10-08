@@ -1,0 +1,22 @@
+.group {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  display: grid;
+  gap: var(--s-4);
+}
+.legend {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+  margin-bottom: var(--s-4);
+}
+.row {
+  display: grid;
+  gap: var(--s-4);
+}
+@media (min-width: 40rem) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,24 @@
+.totals {
+  display: grid;
+  gap: var(--s-2);
+}
+.totals div {
+  display: flex;
+  justify-content: space-between;
+  font-variant-numeric: tabular-nums;
+}
+.totals dt {
+  color: var(--muted);
+}
+.totals dd {
+  margin: 0;
+}
+.total {
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+  font-size: var(--step-1);
+  font-weight: 600;
+}
+.total dt {
+  color: var(--fg);
+}

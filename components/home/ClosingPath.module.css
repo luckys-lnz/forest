@@ -1,0 +1,93 @@
+.path {
+  display: grid;
+  gap: var(--s-3);
+  align-content: start;
+  padding: var(--s-6);
+  border-radius: var(--r-card);
+  border: 2.5px solid var(--rice);
+  box-shadow: 8px 8px 0 var(--butter);
+  transition: transform var(--t-base) var(--ease-boing);
+}
+.path:hover {
+  transform: rotate(-1deg) translateY(-4px);
+}
+.pathLight {
+  background: var(--rice);
+  color: var(--black);
+  border-color: var(--black);
+  box-shadow: 8px 8px 0 var(--tomato);
+  --fg: var(--black);
+  --bg: var(--rice);
+  --muted: var(--stone);
+}
+.pathArt {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--s-4);
+  height: 15rem;
+  margin-bottom: var(--s-3);
+}
+.seedA,
+.seedB {
+  width: 26px;
+  height: 32px;
+  border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%;
+  margin-bottom: var(--s-4);
+}
+.seedA {
+  background: var(--yolk);
+}
+.seedB {
+  background: var(--shiso);
+}
+.pathProduct {
+  height: 15rem;
+  margin: calc(var(--s-6) * -1) calc(var(--s-6) * -1) var(--s-3);
+  overflow: hidden;
+  border-radius: calc(var(--r-card) - 3px) calc(var(--r-card) - 3px) 0 0;
+}
+.pathTitle {
+  font: var(--type-h3);
+  letter-spacing: var(--track-h3);
+}
+.pathBody {
+  color: var(--muted);
+  max-width: 30rem;
+}
+.pathLink,
+.pathLinkDark {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0 var(--s-5);
+  margin-top: var(--s-3);
+  border-radius: var(--r-pill);
+  background: var(--yolk);
+  color: var(--black);
+  font-weight: 600;
+  text-decoration: none;
+}
+.pathLinkDark {
+  margin-top: 0;
+  background: transparent;
+  text-decoration: underline;
+  padding: 0 var(--s-3);
+}
+.pathActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-3);
+}
+
+@media (min-width: 64rem) {
+  .path {
+    padding: var(--s-7);
+  }
+  .pathProduct {
+    margin: calc(var(--s-7) * -1) calc(var(--s-7) * -1) var(--s-3);
+  }
+}

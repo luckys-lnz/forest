@@ -1,0 +1,23 @@
+.logo {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  line-height: 1;
+}
+.word {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+.leaf {
+  width: 1.05rem;
+  height: auto;
+  margin-left: -0.45rem;
+  margin-top: -0.3rem;
+  transform-origin: 0 100%;
+  transition: transform var(--t-slow) var(--ease-spring);
+}
+a:hover .leaf {
+  transform: rotate(-14deg);
+}

@@ -1,0 +1,34 @@
+/* Shared by app/not-found.tsx and app/error.tsx. Global on purpose: the
+   root not-found and error boundaries ship with every page, so a CSS
+   module here would be preloaded on every page and then go unused
+   (the browser warns about that). Classes are prefixed to stay unique. */
+.boundary {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  padding: var(--s-9) 0;
+}
+.boundary-inner {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-5);
+}
+.boundary-title {
+  font: var(--type-h1);
+  letter-spacing: var(--track-h1);
+  max-width: 14ch;
+}
+.boundary-lead {
+  font: var(--type-lead);
+  color: var(--muted);
+  max-width: 32rem;
+}
+.boundary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.boundary-small {
+  font-size: var(--step--1);
+  color: var(--muted);
+}

@@ -1,0 +1,99 @@
+.moods {
+  display: flex;
+  justify-content: space-between;
+}
+/* The line between the two moods, with every candidate dish placed on it. */
+.track {
+  position: relative;
+  height: 62cqi;
+  margin: 2cqi 3cqi 0;
+  background: linear-gradient(var(--black), var(--black)) 0 50% / 100% 0.6cqi no-repeat;
+}
+.dish {
+  position: absolute;
+  left: calc(var(--x) * 100%);
+  top: 50%;
+  width: 3.4cqi;
+  height: 3.4cqi;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: #fff;
+  border: 0.5cqi solid var(--black);
+  transition: transform 300ms var(--ease-boing), background 200ms ease;
+}
+.dish[data-top="true"] {
+  transform: scale(2);
+  background: var(--tomato);
+}
+/* Labels take turns above and below the line so they never collide. */
+.label {
+  position: absolute;
+  left: 50%;
+  bottom: 160%;
+  translate: -50% 0;
+  width: 22cqi;
+  text-align: center;
+  font-size: 3cqi;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.dish[data-slot="1"] .label,
+.dish[data-slot="3"] .label {
+  bottom: auto;
+  top: 160%;
+}
+.dish[data-slot="2"] .label {
+  bottom: 560%;
+}
+.dish[data-slot="3"] .label {
+  top: 560%;
+}
+.seed {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--x) * 100%);
+  width: 6cqi;
+  height: 7.4cqi;
+  translate: -50% -50%;
+  border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%;
+  border: 0.5cqi solid var(--black);
+}
+.seedA {
+  background: var(--yolk);
+  margin-top: -4cqi;
+}
+.seedB {
+  background: var(--mint);
+  margin-top: 4cqi;
+}
+.pick {
+  display: flex;
+  align-items: center;
+  gap: 3cqi;
+  padding: 3cqi 4cqi;
+  border: 0.6cqi solid var(--black);
+  border-radius: 5cqi;
+  background: var(--butter);
+  box-shadow: 1.2cqi 1.2cqi 0 var(--black);
+  transform: translateY(8cqi) scale(0.9);
+  opacity: 0;
+  transition:
+    transform 420ms var(--ease-boing),
+    opacity 200ms ease;
+}
+.pick[data-on="true"] {
+  transform: none;
+  opacity: 1;
+}
+.pick p {
+  display: grid;
+}
+.pick strong {
+  font-family: var(--display);
+  font-size: 5.4cqi;
+  letter-spacing: -0.03em;
+}
+.pick :global(svg) {
+  width: 11cqi;
+  height: auto;
+}

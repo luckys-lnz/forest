@@ -1,0 +1,22 @@
+/* Section themes: flip the role tokens for light surfaces. */
+.on-light {
+  --bg: var(--rice);
+  --fg: var(--black);
+  --muted: var(--stone);
+  --line: var(--clay);
+  --surface: var(--paper);
+  --accent-text: var(--shiso-deep);
+  --error: #a63520;
+  --b: var(--shiso-deep);
+}
+
+.on-paper {
+  --bg: var(--paper);
+  --fg: var(--black);
+  --muted: var(--stone);
+  --line: var(--clay);
+  --surface: var(--rice);
+  --accent-text: var(--shiso-deep);
+  --error: #a63520;
+  --b: var(--shiso-deep);
+}

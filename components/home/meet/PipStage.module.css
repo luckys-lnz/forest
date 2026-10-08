@@ -1,0 +1,80 @@
+.stage {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-5);
+  padding: var(--s-7) var(--s-5);
+  border-radius: var(--r-sheet);
+  background: radial-gradient(70% 60% at 50% 35%, #1b1a17 0%, var(--black) 70%);
+  border: 1px solid var(--ash);
+}
+.pipBox {
+  position: relative;
+}
+.pipButton {
+  border-radius: 50%;
+  transition: transform var(--t-base) var(--ease-spring);
+}
+.pipButton:active {
+  transform: scale(0.94);
+}
+.zz {
+  font: var(--type-voice-lg);
+  letter-spacing: var(--track-voice);
+  position: absolute;
+  right: -6px;
+  top: 10px;
+  color: var(--mist);
+  opacity: 0;
+  transition: opacity var(--t-slow) ease;
+}
+.zz[data-on="true"] {
+  opacity: 1;
+  animation: drift 3s ease-in-out infinite;
+}
+@keyframes drift {
+  50% {
+    transform: translate(6px, -10px);
+    opacity: 0.4;
+  }
+}
+
+.bubble {
+  position: relative;
+  max-width: 26rem;
+  min-height: 6.5rem;
+  padding: var(--s-4) var(--s-5);
+  border-radius: 1.1rem;
+  background: var(--rice);
+  color: var(--black);
+}
+.bubble::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: var(--rice);
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 3px;
+}
+.note {
+  font: var(--type-voice);
+  letter-spacing: var(--track-voice);
+  position: relative;
+  animation: noteIn var(--t-slow) var(--ease-out);
+}
+.dish {
+  display: block;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--stone);
+  margin-bottom: var(--s-1);
+}
+@keyframes noteIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}

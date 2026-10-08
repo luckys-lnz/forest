@@ -1,0 +1,14 @@
+.frame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: radial-gradient(120% 90% at 30% 20%, #2a2622, #121110);
+  border-radius: var(--r-image);
+}
+.fill {
+  position: absolute;
+  inset: 0;
+}
+.img {
+  object-fit: cover;
+}

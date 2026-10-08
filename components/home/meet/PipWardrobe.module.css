@@ -1,0 +1,41 @@
+.wardrobe {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--s-2);
+  justify-items: center;
+}
+.legend {
+  font-size: var(--step-2);
+  color: var(--butter);
+  margin-bottom: var(--s-2);
+  transform: rotate(-3deg);
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-2);
+}
+.chip {
+  min-height: 2.5rem;
+  padding: 0 var(--s-4);
+  border-radius: var(--r-pill);
+  border: 2px solid var(--ash);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--step--1);
+  color: var(--rice);
+  transition: transform var(--t-base) var(--ease-boing);
+}
+.chip:hover {
+  transform: rotate(-3deg) scale(1.05);
+  border-color: var(--rice);
+}
+.on {
+  background: var(--butter);
+  border-color: var(--butter);
+  color: var(--black);
+  transform: rotate(-2deg);
+}

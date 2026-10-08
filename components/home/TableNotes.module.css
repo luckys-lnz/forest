@@ -1,0 +1,36 @@
+.ask {
+  display: grid;
+  gap: var(--s-3);
+  max-width: 40rem;
+  padding: var(--s-6) 0 0;
+  border-top: 1px solid var(--line);
+}
+.askTitle {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+}
+.askBody {
+  color: var(--muted);
+}
+.askLink {
+  justify-self: start;
+  font-weight: 600;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.notes {
+  display: grid;
+  gap: var(--s-6);
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+.note blockquote p {
+  font: var(--type-voice-lg);
+  letter-spacing: var(--track-voice);
+}
+.credit {
+  margin-top: var(--s-3);
+  font-size: var(--step--1);
+  color: var(--muted);
+}

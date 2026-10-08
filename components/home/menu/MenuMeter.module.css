@@ -1,0 +1,52 @@
+/* The fit meter and Pip's pick badge, shared by MenuTile. */
+.meter {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-1);
+  font-size: var(--step--1);
+}
+.meter strong {
+  font-family: var(--display);
+  font-weight: 700;
+}
+.track {
+  flex: 1;
+  max-width: 7rem;
+  height: 0.7rem;
+  border: 2px solid var(--black);
+  border-radius: 99px;
+  background: var(--cream);
+  overflow: hidden;
+}
+.track span {
+  display: block;
+  height: 100%;
+  width: calc(var(--fit) * 100%);
+  background: var(--mood, var(--tomato));
+  border-right: 2px solid var(--black);
+  transition: width 600ms var(--ease-boing);
+}
+.pick {
+  position: absolute;
+  z-index: 2;
+  top: -1.4rem;
+  right: -0.6rem;
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+  animation: pop 520ms var(--ease-boing);
+  pointer-events: none;
+}
+.pick :global(.hand) {
+  font-size: var(--step-1);
+  color: var(--tomato);
+  transform: rotate(8deg);
+  -webkit-text-stroke: 0.4px var(--black);
+}
+@keyframes pop {
+  from {
+    transform: scale(0.3) rotate(-20deg);
+    opacity: 0;
+  }
+}

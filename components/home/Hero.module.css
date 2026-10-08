@@ -1,0 +1,95 @@
+.hero {
+  padding: var(--s-6) 0 var(--s-8);
+  overflow: hidden;
+}
+.head {
+  position: relative;
+  display: grid;
+  gap: var(--s-5);
+  margin-bottom: var(--s-7);
+}
+
+.title {
+  font: var(--type-hero);
+  letter-spacing: var(--track-hero);
+}
+.row {
+  display: block;
+  animation: rise 800ms var(--ease-boing) both;
+}
+.row:nth-child(2) {
+  animation-delay: 90ms;
+}
+.row:nth-child(3) {
+  animation-delay: 180ms;
+}
+.title em {
+  padding-right: 0.08em;
+}
+
+/* Pip sits in the headline like a letter. */
+.pip {
+  display: inline-block;
+  vertical-align: -0.08em;
+  width: 0.7em;
+  margin-left: 0.04em;
+  touch-action: manipulation;
+}
+.pip svg {
+  width: 100%;
+  height: auto;
+}
+.pipPop {
+  display: block;
+  animation: boing 560ms var(--ease-boing);
+}
+
+.lead {
+  font: var(--type-lead);
+  max-width: 34rem;
+}
+
+.stamp {
+  display: none;
+}
+.stampNote {
+  font-size: var(--step-3);
+  transform: rotate(-8deg);
+}
+
+/* Desktop: headline on the left, the stamp and the lead in a margin column. */
+@media (min-width: 64rem) {
+  .head {
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    grid-template-rows: auto 1fr auto;
+    column-gap: var(--s-7);
+  }
+  .kicker,
+  .title {
+    grid-column: 1;
+  }
+  .title {
+    grid-row: 2 / 4;
+  }
+  .stamp {
+    display: block;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    justify-self: end;
+    align-self: center;
+    margin-right: 2rem;
+  }
+  .lead {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: end;
+    font-size: var(--step-0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.3em) rotate(2deg);
+  }
+}

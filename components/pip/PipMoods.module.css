@@ -1,0 +1,55 @@
+/* Pip's six expressions. Class names match the PipMood union. */
+.idle {
+}
+.curious [data-part="figure"] {
+  transform: rotate(-8deg);
+}
+.curious [data-part="eye"][data-side="right"] {
+  transform: scale(1.18);
+}
+.curious [data-part="leaf"] {
+  transform: rotate(10deg);
+}
+.thinking [data-part="leaf"] {
+  animation: ponder 1.1s var(--ease-inout) infinite alternate;
+}
+.thinking [data-part="eyes"] {
+  transform: translate(3px, -5px);
+}
+.happy [data-part="figure"] {
+  animation: hop 560ms var(--ease-spring) 1;
+}
+.happy [data-part="leaf"] {
+  transform: rotate(-12deg);
+}
+.sleepy [data-part="leaf"] {
+  transform: rotate(38deg) translate(2px, 3px);
+}
+.sleepy [data-part="figure"] {
+  transform: rotate(4deg) translateY(2px);
+}
+.surprised [data-part="eye"] {
+  transform: scale(1.3);
+}
+.surprised [data-part="leaf"] {
+  transform: rotate(-22deg) translateY(-3px);
+}
+.surprised [data-part="figure"] {
+  transform: translateY(-3px);
+}
+@keyframes ponder {
+  from {
+    transform: rotate(-14deg);
+  }
+  to {
+    transform: rotate(16deg);
+  }
+}
+@keyframes hop {
+  30% {
+    transform: translateY(2px) scale(1.06, 0.94);
+  }
+  60% {
+    transform: translateY(-9px) scale(0.97, 1.04);
+  }
+}

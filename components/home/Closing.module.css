@@ -1,0 +1,23 @@
+.closing {
+  padding: var(--s-10) 0 var(--s-9);
+  background: var(--black);
+}
+.title {
+  font: var(--type-hero);
+  letter-spacing: var(--track-hero);
+  margin-bottom: var(--s-8);
+  max-width: 10ch;
+}
+.title em {
+  color: var(--butter);
+}
+.paths {
+  display: grid;
+  gap: var(--s-4);
+}
+
+@media (min-width: 64rem) {
+  .paths {
+    grid-template-columns: 1fr 1fr;
+  }
+}

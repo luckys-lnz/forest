@@ -1,0 +1,54 @@
+.section {
+  padding: var(--s-10) 0;
+}
+.inner {
+  display: grid;
+  gap: var(--s-7);
+}
+.head {
+  display: grid;
+  gap: var(--s-5);
+  align-items: end;
+}
+.titleBox {
+  display: grid;
+  gap: var(--s-2);
+}
+.h2 {
+  font: var(--type-h2);
+  letter-spacing: var(--track-h2);
+  max-width: 14ch;
+}
+.wide {
+  font: var(--type-h3);
+  letter-spacing: var(--track-h3);
+  max-width: 22ch;
+}
+.hand {
+  position: relative;
+  justify-self: start;
+  font-size: var(--step-3);
+  color: var(--tomato);
+  transform: rotate(-4deg);
+  padding-right: 3.2rem;
+}
+.handArrow {
+  position: absolute;
+  right: 0;
+  top: 55%;
+  width: 2.8rem;
+  height: 2.2rem;
+  color: var(--fg);
+  transform: rotate(20deg);
+}
+.note {
+  display: grid;
+  gap: var(--s-3);
+  max-width: 30rem;
+  color: var(--muted);
+}
+@media (min-width: 64rem) {
+  .split {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+}

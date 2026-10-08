@@ -1,0 +1,31 @@
+.header {
+  display: grid;
+  gap: var(--s-4);
+  max-width: 64rem;
+  margin-bottom: var(--s-7);
+}
+.cat {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--accent-text);
+  text-decoration: none;
+}
+.title {
+  font: var(--type-h1);
+  letter-spacing: var(--track-h1);
+  max-width: 14ch;
+}
+.dek {
+  font: var(--type-voice-lg);
+  letter-spacing: var(--track-voice);
+  color: #2b2925;
+  max-width: 40rem;
+}
+.meta {
+  font-size: var(--step--1);
+  color: var(--muted);
+}

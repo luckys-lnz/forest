@@ -1,0 +1,88 @@
+/* A dish on the menu board: a white card with the board's black ink. */
+.tile {
+  position: relative;
+  display: grid;
+  gap: var(--s-3);
+  padding: var(--s-3);
+  background: #fff;
+  border: 2.5px solid var(--black);
+  border-radius: 1.4rem;
+  box-shadow: 5px 5px 0 var(--black);
+  transition:
+    background 120ms ease,
+    box-shadow 200ms ease,
+    transform var(--t-base) var(--ease-boing);
+}
+.tile:hover {
+  transform: rotate(-1deg) translateY(-3px);
+  box-shadow: 8px 8px 0 var(--black);
+}
+/* The arcade light passing over a tile. */
+.lit {
+  background: var(--butter);
+  transform: scale(1.03);
+}
+.picked {
+  background: var(--butter);
+  transform: rotate(-1.5deg) scale(1.03);
+  box-shadow: 8px 8px 0 var(--tomato);
+}
+.rank {
+  position: absolute;
+  z-index: 2;
+  top: -0.8rem;
+  left: -0.6rem;
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--rice);
+  font-family: var(--display);
+  font-weight: 700;
+  box-shadow: 0 0 0 3px #fff;
+}
+.photo {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  border: 2px solid var(--black);
+}
+.info {
+  display: grid;
+  gap: var(--s-1);
+  padding: 0 var(--s-1) var(--s-1);
+}
+.name {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+}
+/* The whole card is the link's hit area. */
+.link {
+  text-decoration: none;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+.link:focus-visible {
+  outline: none;
+}
+.tile:has(.link:focus-visible) {
+  outline: 3px solid var(--black);
+  outline-offset: 4px;
+}
+.cuisine,
+.crowd {
+  font-size: var(--step--1);
+  color: var(--stone);
+}
+.crowd {
+  font-size: var(--step--2);
+}

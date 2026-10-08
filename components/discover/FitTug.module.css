@@ -1,0 +1,46 @@
+.tug {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-2);
+  font-size: var(--step--2);
+}
+.label {
+  color: var(--stone);
+  white-space: nowrap;
+  max-width: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.track {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  align-items: center;
+  height: 10px;
+}
+.barA,
+.barB {
+  height: 6px;
+  border-radius: 3px;
+  animation: grow 900ms var(--ease-out) 200ms both;
+}
+.barA {
+  background: var(--yolk);
+  transform-origin: right;
+  transform: scaleX(var(--fa));
+}
+.barB {
+  background: var(--shiso);
+  transform-origin: left;
+  transform: scaleX(var(--fb));
+}
+.mid {
+  height: 14px;
+  background: var(--black);
+}
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+}

@@ -1,0 +1,67 @@
+.seed {
+  box-shadow: 0 0 0 3px rgb(0 0 0 / 0.6);
+}
+
+.region {
+  position: fixed;
+  z-index: 80;
+  right: var(--page);
+  bottom: calc(var(--page) + var(--action-bar, 0px));
+  left: var(--page);
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  max-width: 28rem;
+  width: 100%;
+  padding: var(--s-4) var(--s-4) var(--s-4) var(--s-5);
+  background: var(--rice);
+  color: var(--black);
+  border-radius: var(--r-sheet);
+  box-shadow: 0 18px 40px -12px rgb(0 0 0 / 0.55);
+  animation: rise var(--t-base) var(--ease-out);
+  --fg: var(--black);
+}
+.toast p {
+  flex: 1;
+  font-size: var(--step--1);
+  line-height: 1.4;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.link {
+  font-weight: 600;
+  font-size: var(--step--1);
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-pill);
+  background: var(--black);
+  color: var(--rice);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.close {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.close:hover {
+  background: var(--clay);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}

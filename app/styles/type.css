@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Forest type system (from the client brief).
+   Sans = Forest the product. Serif = Forest the personality.
+
+   - Instrument Serif: hero, section headlines, Pip's dialogue,
+     conversational prompts and handwritten-style notes. Regular and
+     italic only; never bolded.
+   - Inter Tight (free stand-in for Söhne): body, navigation, buttons,
+     product names, prices and metadata.
+
+   Components never pick fonts, sizes or weights ad hoc: they use a role.
+   ========================================================================== */
+
+:root {
+  /* Sizes per role, fluid between phone and desktop. */
+  --t-hero: clamp(3.75rem, 1.2rem + 14vw, 11.5rem);
+  --t-h1: clamp(3rem, 1.6rem + 6vw, 7.5rem);
+  --t-h2: clamp(2.5rem, 1.4rem + 4.4vw, 5.5rem);
+  --t-h3: clamp(1.75rem, 1.3rem + 1.6vw, 2.6rem);
+  --t-h4: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+
+  /* Personality roles: the serif, always weight 400. */
+  --type-hero: 400 var(--t-hero) / 0.88 var(--serif);
+  --track-hero: -0.035em;
+  --type-h1: 400 var(--t-h1) / 0.92 var(--serif);
+  --track-h1: -0.03em;
+  --type-h2: 400 var(--t-h2) / 0.95 var(--serif);
+  --track-h2: -0.025em;
+  --type-h3: 400 var(--t-h3) / 1 var(--serif);
+  --track-h3: -0.015em;
+  --type-voice: italic 400 var(--step-1) / 1.3 var(--serif);
+  --type-voice-lg: italic 400 var(--step-2) / 1.2 var(--serif);
+  --track-voice: -0.005em;
+
+  /* Product roles: the sans. Strong for names, quiet for everything else. */
+  --type-h4: 600 var(--t-h4) / 1.15 var(--sans);
+  --track-h4: -0.015em;
+  /* A featured product or dish name: still the product voice, just bigger. */
+  --type-name-lg: 600 var(--step-3) / 1.05 var(--sans);
+  --track-name-lg: -0.025em;
+  --type-lead: 400 var(--step-1) / 1.45 var(--sans);
+  --type-body: 400 var(--step-0) / 1.55 var(--sans);
+  --type-small: 400 var(--step--1) / 1.45 var(--sans);
+  --type-label: 600 var(--step--2) / 1.2 var(--sans);
+  --track-label: 0.09em;
+  --type-price: 600 var(--step-2) / 1.1 var(--sans);
+  --type-number: 600 var(--t-h3) / 1 var(--sans);
+}
+
+/* The same roles as classes, for markup without a module of its own. */
+.t-h1 {
+  font: var(--type-h1);
+  letter-spacing: var(--track-h1);
+}
+.t-h2 {
+  font: var(--type-h2);
+  letter-spacing: var(--track-h2);
+}
+.t-h3 {
+  font: var(--type-h3);
+  letter-spacing: var(--track-h3);
+}
+.t-h4 {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+}
+.t-label {
+  font: var(--type-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+.t-voice {
+  font: var(--type-voice);
+  letter-spacing: var(--track-voice);
+}
+
+/* The accent word inside any headline: the same serif, in italic. */
+:is(h1, h2, h3, .t-h1, .t-h2, .t-h3, .headline) em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+}

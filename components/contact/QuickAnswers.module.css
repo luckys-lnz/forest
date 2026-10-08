@@ -1,0 +1,23 @@
+.title {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+  margin-bottom: var(--s-4);
+}
+.faq details {
+  border-top: 1px solid var(--line);
+}
+.faq details:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.faq summary {
+  min-height: 3.25rem;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+.faq details p {
+  padding-bottom: var(--s-4);
+  color: var(--muted);
+  max-width: 40rem;
+}

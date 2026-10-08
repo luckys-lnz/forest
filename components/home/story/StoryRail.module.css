@@ -1,0 +1,78 @@
+.rail {
+  width: min(100%, 22rem);
+}
+.rail ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s-2);
+}
+.item {
+  position: relative;
+  display: grid;
+  gap: var(--s-1);
+  width: 100%;
+  min-height: 2.75rem;
+  align-content: center;
+  text-align: left;
+}
+.num {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--step--1);
+}
+/* On phones only the bars and numbers show; desktop adds the labels. */
+.label {
+  display: none;
+}
+.bar {
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  border: 1.5px solid var(--black);
+  background:
+    linear-gradient(var(--black), var(--black)) 0 0 / calc(var(--fill) * 100%) 100% no-repeat,
+    rgb(255 255 255 / 0.6);
+}
+
+@media (min-width: 64rem) {
+  .rail {
+    justify-self: end;
+  }
+  .rail ol {
+    grid-template-columns: 1fr;
+    gap: var(--s-3);
+  }
+  .item {
+    grid-template-columns: auto 1fr;
+    gap: var(--s-2) var(--s-4);
+    padding: var(--s-4);
+    border-radius: 1.25rem;
+    border: 2px solid transparent;
+    transition:
+      transform var(--t-base) var(--ease-boing),
+      background var(--t-fast) ease;
+  }
+  .item:hover {
+    transform: rotate(-1.5deg);
+    border-color: var(--black);
+  }
+  .on {
+    background: #fff;
+    border-color: var(--black);
+    box-shadow: 5px 5px 0 var(--black);
+  }
+  .num {
+    font-size: var(--step-1);
+  }
+  .label {
+    display: block;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .bar {
+    grid-column: 1 / -1;
+  }
+}

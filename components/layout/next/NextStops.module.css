@@ -1,0 +1,78 @@
+.next {
+  padding: var(--s-8) 0 var(--s-9);
+  border-top: 3px solid var(--black);
+}
+.title {
+  font: var(--type-h2);
+  letter-spacing: var(--track-h2);
+  margin-bottom: var(--s-6);
+}
+.list {
+  display: grid;
+  gap: var(--s-5);
+  padding: 0;
+  margin: 0;
+}
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "food name arrow"
+    "food line arrow";
+  align-items: center;
+  gap: 0 var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  border: 2.5px solid var(--black);
+  border-radius: 1.4rem;
+  background: var(--c);
+  color: var(--black);
+  text-decoration: none;
+  box-shadow: 5px 5px 0 var(--black);
+  transform: rotate(var(--tilt));
+  transition:
+    transform var(--t-base) var(--ease-boing),
+    box-shadow 150ms ease;
+}
+.card:hover {
+  transform: rotate(0deg) translate(-2px, -3px);
+  box-shadow: 8px 8px 0 var(--black);
+}
+.card:hover .food {
+  animation: wiggle 500ms ease-in-out;
+}
+.card:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--black);
+}
+.food {
+  grid-area: food;
+  width: 3.25rem;
+  height: auto;
+}
+.name {
+  font: var(--type-h4);
+  letter-spacing: var(--track-h4);
+  grid-area: name;
+}
+.line {
+  grid-area: line;
+  font-size: var(--step--1);
+  color: rgb(0 0 0 / 0.7);
+}
+.arrow {
+  grid-area: arrow;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--step-3);
+  transition: transform var(--t-base) var(--ease-boing);
+}
+.card:hover .arrow {
+  transform: translateX(6px);
+}
+
+@media (min-width: 64rem) {
+  .list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

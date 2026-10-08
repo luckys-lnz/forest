@@ -1,0 +1,9 @@
+.page {
+  padding: var(--s-7) 0 var(--s-9);
+  min-height: 75vh;
+}
+.title {
+  font: var(--type-h1);
+  letter-spacing: var(--track-h1);
+  margin-bottom: var(--s-7);
+}

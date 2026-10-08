@@ -1,0 +1,17 @@
+.sent {
+  display: grid;
+  justify-items: start;
+  gap: var(--s-4);
+  max-width: 34rem;
+  animation: settle var(--t-slow) var(--ease-out);
+}
+.title {
+  font: var(--type-h3);
+  letter-spacing: var(--track-h3);
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}

@@ -1,0 +1,74 @@
+/* The matchmaker sits on a black diner ticket, back in the brand's own ink. */
+.ticket {
+  --bg: var(--black);
+  --fg: var(--rice);
+  --muted: var(--mist);
+  --line: var(--ash);
+  --surface: var(--coal);
+  --accent-text: var(--yolk);
+  --error: #ff9a85;
+  --b: var(--shiso);
+  position: relative;
+  background: var(--black);
+  color: var(--rice);
+  border-radius: var(--r-card);
+  padding: var(--s-5) var(--s-4) var(--s-6);
+  box-shadow: 8px 8px 0 var(--tomato);
+}
+.ticket :focus-visible {
+  outline-color: var(--yolk);
+}
+/* Punched holes down the sides, like a tear-off order slip. */
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  top: 4.25rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--cream);
+}
+.ticket::before {
+  left: -0.7rem;
+}
+.ticket::after {
+  right: -0.7rem;
+}
+.head {
+  font: var(--type-label);
+  letter-spacing: var(--track-label);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s-4);
+  padding-bottom: var(--s-4);
+  margin-bottom: var(--s-6);
+  border-bottom: 2px dashed var(--ash);
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.head :global(.hand) {
+  font-size: var(--step-3);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--butter);
+}
+
+.aside {
+  font: var(--type-lead);
+  margin-top: var(--s-7);
+  max-width: 44rem;
+}
+.aside a {
+  font-weight: 700;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--tomato);
+}
+
+@media (min-width: 48rem) {
+  .ticket {
+    padding: var(--s-6) var(--s-7) var(--s-7);
+    box-shadow: 12px 12px 0 var(--tomato);
+  }
+}
