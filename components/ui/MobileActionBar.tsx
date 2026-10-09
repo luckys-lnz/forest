@@ -32,7 +32,9 @@ export function MobileActionBar({ watch, when = "passed", children }: Props) {
   // Let other bottom-anchored UI (the cart toast) sit above the bar.
   useEffect(() => {
     document.body.style.setProperty("--action-bar", show ? "4.75rem" : "0px");
-    return () => document.body.style.removeProperty("--action-bar");
+    return () => {
+      document.body.style.removeProperty("--action-bar");
+    };
   }, [show]);
 
   return (
